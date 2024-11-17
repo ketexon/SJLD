@@ -27,6 +27,12 @@ public class DilemmaCar : Car
     void Awake()
     {
         camera = Camera.main;
+
+        panelAnimator.SetBool("Left", selectingLeftItem);
+        panelAnimator.SetBool("Active", false);
+        switchAnimator.SetBool("Left", selectingLeftItem);
+        leftItemUI.Border.enabled = selectingLeftItem;
+        rightItemUI.Border.enabled = !selectingLeftItem;
     }
 
     void OnPoint(Vector2 pos)
@@ -47,6 +53,8 @@ public class DilemmaCar : Car
         selectingLeftItem = !selectingLeftItem;
         panelAnimator.SetBool("Left", selectingLeftItem);
         switchAnimator.SetBool("Left", selectingLeftItem);
+        leftItemUI.Border.enabled = selectingLeftItem;
+        rightItemUI.Border.enabled = !selectingLeftItem;
     }
 
     public override void OnEnable()
@@ -89,6 +97,7 @@ public class DilemmaCar : Car
         goButton.interactable = true;
         PlayerMovement.Instance.Moving = false;
         canFlipSwitch = true;
+        panelAnimator.SetBool("Active", true);
     }
 
     void Update()

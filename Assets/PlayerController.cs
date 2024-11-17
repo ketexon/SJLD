@@ -13,6 +13,8 @@ public class PlayerController : SingletonMonoBehaviour<PlayerController>
     [SerializeField] float jumpCooldown = 0.2f;
     [SerializeField] PlayerMovement playerMovement;
 
+    [System.NonSerialized] public int NJumps = 1;
+
     int _health = 3;
     public int Health
     {
@@ -28,6 +30,7 @@ public class PlayerController : SingletonMonoBehaviour<PlayerController>
 
     float lastJumpTime = float.NegativeInfinity;
     bool isGrounded = false;
+    int jumpsRemaining = 1;
 
     void Start()
     {
@@ -44,16 +47,21 @@ public class PlayerController : SingletonMonoBehaviour<PlayerController>
     public void Jump(InputAction.CallbackContext v)
     {
         if (!enabled || !v.performed) return;
-        if (isGrounded && Time.time > lastJumpTime + jumpCooldown)
+        if (Time.time > lastJumpTime + jumpCooldown && jumpsRemaining > 0)
         {
             lastJumpTime = Time.time;
             rb.linearVelocityY = jumpVelocity;
+            jumpsRemaining--;
         }
     }
 
     void Update()
     {
         UpdateIsGrounded();
+        if(isGrounded && Time.time > lastJumpTime + jumpCooldown)
+        {
+            jumpsRemaining = NJumps;
+        }
     }
 
     void UpdateIsGrounded()

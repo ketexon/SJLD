@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe123cdb88a94e04c922510e2b7a972b, type: 3}
-  m_Name: HealthDebuff
+  m_Name: Utilitarianism
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 2118212395437311073, guid: 358323b961db9064bbd8f99eda6e36a8, type: 3}
-  Debuff: 1
-  Icon: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  Name: Lead poisoning
-  Description: -1 Health
-  CanHaveMultiple: 1
+  Prefab: {fileID: 8511001995856101035, guid: cbd6f0f1a2a0a1647bb47bba4d36c997, type: 3}
+  Debuff: 0
+  Icon: {fileID: 21300000, guid: 787648eeb9cde8e479082cf9011d4a07, type: 3}
+  Name: Utilitarianism
+  Description: People are tied to the train tracks. Things will get bumpier.
+  CanHaveMultiple: 0
+  Price: 1

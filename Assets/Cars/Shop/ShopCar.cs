@@ -7,6 +7,7 @@ public class ShopCar : Car
     [SerializeField] Button goButton;
     [SerializeField] CanvasGroup itemUICanvasGroup;
     [SerializeField] List<ItemUI> itemUIs;
+    [SerializeField] Transform dynamicObjectsParent;
 
     public override void OnEnable()
     {
@@ -25,6 +26,8 @@ public class ShopCar : Car
         itemUIs[0].enabled = true;
         itemUIs[1].enabled = true;
         itemUIs[2].enabled = true;
+
+        dynamicObjectsParent.SetParent(null);
     }
 
     public override void OnDisable()

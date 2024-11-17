@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1683315323304113583}
-  - component: {fileID: 7663746607369700610}
+  - component: {fileID: -3041086914673329689}
   m_Layer: 0
-  m_Name: HealthBuff
+  m_Name: Incline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7663746607369700610
+--- !u!114 &-3041086914673329689
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,8 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2118212395437311073}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abd0151c493867b4cabe2ea7a09112a9, type: 3}
+  m_Script: {fileID: 11500000, guid: d011b0374bac99c4a9a6480064ada5f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMult: 1
-  healthDelta: 1
+  Angle: -5

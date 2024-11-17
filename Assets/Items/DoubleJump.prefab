@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1683315323304113583}
   - component: {fileID: 7663746607369700610}
   m_Layer: 0
-  m_Name: SpeedDebuff
+  m_Name: DoubleJump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,4 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd0151c493867b4cabe2ea7a09112a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMult: 0.8
+  speedMult: 1
+  healthDelta: 0
+  jumpsDelta: 1

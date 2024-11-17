@@ -15,7 +15,7 @@ MonoBehaviour:
   Prefab: {fileID: 2118212395437311073, guid: 3bfb92e6726d8054bae82e67c5109cba, type: 3}
   Debuff: 0
   Icon: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  Name: Slop
+  Name: MEGASlop
   Description: +2 Health
   CanHaveMultiple: 1
   Price: 3
