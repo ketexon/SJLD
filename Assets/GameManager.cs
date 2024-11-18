@@ -10,6 +10,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     public string ScoreText => string.Format(scoreTemplateText, Score, Score == 1 ? "" : "s");
 
     public UnityEvent RestartEvent;
+    public UnityEvent<int> MartinisChangedEvent;
 
     bool restarting = false;
 
@@ -23,6 +24,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
             {
                 _martinis = value;
                 UIManager.Instance.SetMartinis(value);
+                MartinisChangedEvent.Invoke(value);
             }
         }
     }

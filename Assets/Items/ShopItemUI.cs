@@ -17,6 +17,13 @@ public class ShopItemUI : MonoBehaviour
         itemSO = itemUI.Item;
         priceText.text = "";
         UpdateInteractable();
+
+        GameManager.Instance.MartinisChangedEvent.AddListener(OnMartinisChanged);
+    }
+
+    void OnMartinisChanged(int v)
+    {
+        UpdateInteractable();
     }
 
     void OnItemChanged(ItemSO itemSO)
@@ -40,6 +47,7 @@ public class ShopItemUI : MonoBehaviour
 
     public void OnButtonClick()
     {
+        if (GameManager.Instance.Martinis < itemUI.Item.Price) return;
         ItemManager.Instance.AddItem(itemUI.Item);
         GameManager.Instance.Martinis -= itemUI.Item.Price;
         Destroy(gameObject);
