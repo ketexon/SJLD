@@ -19,6 +19,8 @@ public class DilemmaCar : Car
     [SerializeField] Transform rightSquirmersContainer;
     [SerializeField] GameObject squirmerPrefab;
 
+    [SerializeField] AudioSource levelSFXSource;
+
     List<Animator> leftSquirmerAnimators = new();
     List<Animator> rightSquirmerAnimators = new();
 
@@ -74,6 +76,8 @@ public class DilemmaCar : Car
         rightItemButton.enabled = selectingLeftItem;
 
         UpdateSquirmerAnimators();
+
+        levelSFXSource.Play();
     }
 
     public override void OnEnable()
