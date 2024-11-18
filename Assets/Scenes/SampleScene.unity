@@ -497,6 +497,9 @@ MonoBehaviour:
   RestartEvent:
     m_PersistentCalls:
       m_Calls: []
+  MartinisChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
   _martinis: 0
   _score: 0
 --- !u!4 &128725997
@@ -775,7 +778,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6000253155213581747, guid: 7ee759c97a1870c48af3fc5255322497, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7639081337631924339, guid: 7ee759c97a1870c48af3fc5255322497, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1294,7 +1297,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3969,7 +3972,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 0.732
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5304,7 +5307,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6000253155213581747, guid: 7ee759c97a1870c48af3fc5255322497, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7639081337631924339, guid: 7ee759c97a1870c48af3fc5255322497, type: 3}
       propertyPath: m_AnchorMax.x
