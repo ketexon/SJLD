@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe123cdb88a94e04c922510e2b7a972b, type: 3}
+  m_Name: Downhill
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 2118212395437311073, guid: f142b7057a7c6804ab782cb94a637730, type: 3}
+  Debuff: 0
+  Icon: {fileID: 21300000, guid: 5afdc25c40ea5294589d5b3e5071c9d0, type: 3}
+  Name: Downhill
+  Description: +5 Degrees Decline
+  CanHaveMultiple: 1
+  Price: 1

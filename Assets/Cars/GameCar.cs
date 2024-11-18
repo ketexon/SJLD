@@ -13,6 +13,8 @@ public class GameCar : Car
         ObstacleSpawner.Instance.ClearObstacles();
         ObstacleSpawner.Instance.enabled = true;
         PlayerController.Instance.enabled = true;
+
+        PlayerController.Instance.DeathEvent.AddListener(OnPlayerDeath);
     }
 
     public override void OnDisable()
@@ -25,7 +27,13 @@ public class GameCar : Car
         if(PlayerController.Instance)
         {
             PlayerController.Instance.enabled = false;
+            PlayerController.Instance.DeathEvent.RemoveListener(OnPlayerDeath);
         }
+    }
+
+    void OnPlayerDeath()
+    {
+        ObstacleSpawner.Instance.enabled = false;
     }
 
     void Update()

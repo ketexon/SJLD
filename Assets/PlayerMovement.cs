@@ -6,10 +6,21 @@ public class PlayerMovement : SingletonMonoBehaviour<PlayerMovement>
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float acceleration = 8.0f;
     [SerializeField] float maxSpeed = 2.0f;
+    [SerializeField] Animator animator;
 
     [System.NonSerialized] public float SpeedMult = 1.0f;
 
-    public bool Moving { get; set; } = false;
+    bool _moving = false;
+    public bool Moving {
+        get => _moving;
+        set {
+            if(Moving != value)
+            {
+                _moving = value;
+                animator.SetBool("Running", Moving);
+            }
+        }
+    }
 
     void FixedUpdate()
     {

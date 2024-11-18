@@ -1023,6 +1023,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameCar
       objectReference: {fileID: 0}
+    - target: {fileID: 4571308577464037502, guid: d89a19c5d4652d6488dd42f1592be341, type: 3}
+      propertyPath: updateOrthographicSize
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4834832408832349327, guid: d89a19c5d4652d6488dd42f1592be341, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1068,8 +1072,16 @@ PrefabInstance:
       value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 4946219873022425108, guid: d89a19c5d4652d6488dd42f1592be341, type: 3}
+      propertyPath: m_Size.y
+      value: 20.49786
+      objectReference: {fileID: 0}
+    - target: {fileID: 4946219873022425108, guid: d89a19c5d4652d6488dd42f1592be341, type: 3}
       propertyPath: m_Offset.x
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4946219873022425108, guid: d89a19c5d4652d6488dd42f1592be341, type: 3}
+      propertyPath: m_Offset.y
+      value: 9.216368
       objectReference: {fileID: 0}
     - target: {fileID: 5526572996939609691, guid: d89a19c5d4652d6488dd42f1592be341, type: 3}
       propertyPath: m_LocalPosition.x

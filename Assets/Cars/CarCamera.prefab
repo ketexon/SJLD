@@ -160,4 +160,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 4960973565900137439}
+  confiner: {fileID: 3065586348141354442}
   noise: {fileID: 5056495996985184528}
+  updateOrthographicSize: 0

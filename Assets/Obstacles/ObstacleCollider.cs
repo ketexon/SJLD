@@ -14,7 +14,7 @@ public class ObstacleCollider : MonoBehaviour
         collider = GetComponent<Collider2D>();
     }
 
-    public void Break(Vector2 point, Vector2 dir)
+    public virtual void Break(Vector2 point, Vector2 dir)
     {
         spriteRenderer.color = new(
             spriteRenderer.color.r,

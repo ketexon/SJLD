@@ -7,6 +7,7 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
     [SerializeField] GameObject heartPrefab;
 
     [SerializeField] TMPro.TMP_Text martinisText;
+    [SerializeField] TMPro.TMP_Text scoreText;
 
     int CurHearts => heartsContainer.childCount;
 
@@ -31,5 +32,10 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
     public void SetMartinis(int nMartinis)
     {
         martinisText.text = nMartinis.ToString();
+    }
+
+    public void SetScore(string text)
+    {
+        scoreText.text = text;
     }
 }

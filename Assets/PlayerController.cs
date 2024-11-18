@@ -1,5 +1,7 @@
 using Kutie;
+using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class PlayerController : SingletonMonoBehaviour<PlayerController>
@@ -12,18 +14,29 @@ public class PlayerController : SingletonMonoBehaviour<PlayerController>
     [SerializeField] float groundedRaycastDistance = 0.2f;
     [SerializeField] float jumpCooldown = 0.2f;
     [SerializeField] PlayerMovement playerMovement;
+    [SerializeField] public UnityEvent DeathEvent;
+    [SerializeField] Animator animator;
+    [SerializeField] CinemachineCamera deathCamera;
+    [SerializeField] CinemachineBrain cinemachineBrain;
+    [SerializeField] public float CameraOrthographicSize = 2.5f;
 
     [System.NonSerialized] public int NJumps = 1;
+
+    public bool Dead => Health <= 0;
 
     int _health = 3;
     public int Health
     {
         get => _health;
         set {
-            if(_health != value)
+            if(Health != value)
             {
                 _health = value;
                 UIManager.Instance.SetHearts(Health);
+                if(Health <= 0)
+                {
+                    Die();
+                }
             }
         }
     }
@@ -46,7 +59,8 @@ public class PlayerController : SingletonMonoBehaviour<PlayerController>
 
     public void Jump(InputAction.CallbackContext v)
     {
-        if (!enabled || !v.performed) return;
+        if (!enabled || !v.performed || Dead) return;
+        if (PauseMenu.Instance.Paused) return;
         if (Time.time > lastJumpTime + jumpCooldown && jumpsRemaining > 0)
         {
             lastJumpTime = Time.time;
@@ -88,6 +102,7 @@ public class PlayerController : SingletonMonoBehaviour<PlayerController>
         {
             isGrounded = false;
         }
+        animator.SetBool("InAir", !isGrounded);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -120,9 +135,26 @@ public class PlayerController : SingletonMonoBehaviour<PlayerController>
         }
     }
 
+    void Die()
+    {
+        DeathEvent.Invoke();
+        PlayerMovement.Instance.Moving = false;
+        MusicManager.Instance.OnDeath();
+        animator.SetBool("Dead", true);
+        deathCamera.enabled = true;
+
+        this.Defer(() =>
+        {
+            DeathUI.Instance.Show();
+        }, new WaitForSeconds(4f));
+    }
+
     void TakeDamage()
     {
-        Health -= 1;
-        ScreenshakeManager.Instance.TemporaryScreenShake(10, 5, 0.1f);
+        if (!Dead)
+        {
+            Health -= 1;
+            ScreenshakeManager.Instance.TemporaryScreenShake(10, 5, 0.1f);
+        }
     }
 }

@@ -12,8 +12,6 @@ public class ToolTip : SingletonMonoBehaviour<ToolTip>
 
     RectTransform RectTranform => transform as RectTransform;
 
-    bool shown = false;
-
     Coroutine showCoroutine = null;
 
     public string Text

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Utilitarianism
   m_EditorClassIdentifier: 
   Prefab: {fileID: 8511001995856101035, guid: cbd6f0f1a2a0a1647bb47bba4d36c997, type: 3}
-  Debuff: 0
+  Debuff: 1
   Icon: {fileID: 21300000, guid: 787648eeb9cde8e479082cf9011d4a07, type: 3}
   Name: Utilitarianism
   Description: People are tied to the train tracks. Things will get bumpier.

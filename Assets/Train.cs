@@ -8,10 +8,15 @@ public class Train : SingletonMonoBehaviour<Train>
     [SerializeField] GameObject dilemmaCarPrefab;
     [SerializeField] GameObject gameCarPrefab;
     [SerializeField] GameObject shopCarPrefab;
-    [SerializeField] int minCars = 4;
-    [SerializeField] int maxCars = 6;
+    [SerializeField] int carsPerGeneration = 5;
+    [SerializeField] int minCars = 3;
 
-    List<Car> cars = new();
+    LinkedList<Car> cars = new();
+
+    Car LastCar => cars.Count == 0 ? startCar : cars.Last.Value;
+    Car SecondLastCar => cars.Count < 2 ? null : cars.Last.Previous.Value;
+
+    int carIndex = -1;
 
     public Car CurrentCar { get; private set; } = null;
 
@@ -27,17 +32,14 @@ public class Train : SingletonMonoBehaviour<Train>
 
     void Start()
     {
-        cars.Add(startCar);
-        GenerateCars();
+        GenerateCars(carsPerGeneration);
     }
 
-    void GenerateCars()
+    void GenerateCars(int nCars)
     {
-        int nCars = Random.Range(minCars, maxCars + 1);
-        bool nextCanBeShop = false;
         for(int i = 0; i < nCars; i++)
         {
-            if (nextCanBeShop)
+            if (SecondLastCar is GameCar)
             {
                 if(Random.value > 0.5f)
                 {
@@ -46,13 +48,11 @@ public class Train : SingletonMonoBehaviour<Train>
                 else
                 {
                     AddCar(shopCarPrefab);
-                    nextCanBeShop = false;
                 }
             }
             else
             {
                 AddCar(gameCarPrefab);
-                nextCanBeShop = true;
             }
             AddCar(dilemmaCarPrefab);
         }
@@ -61,8 +61,8 @@ public class Train : SingletonMonoBehaviour<Train>
     void AddCar(GameObject prefab)
     {
         var car = Instantiate(prefab, transform);
-        car.transform.position = cars[^1].EndPoint.position;
-        cars.Add(car.GetComponent<Car>());
+        car.transform.position = LastCar.EndPoint.position;
+        cars.AddLast(car.GetComponent<Car>());
     }
 
     public void EnterCar(Car car)
@@ -73,5 +73,22 @@ public class Train : SingletonMonoBehaviour<Train>
         }
         CurrentCar = car;
         CurrentCar.enabled = true;
+
+        carIndex++;
+
+        // only start deleting cars after we clear
+        //      the start car
+        //      the first game car
+        //      the first dilemma car
+        // (as otherwise, we will see the car being deleted)
+        if (carIndex >= 3)
+        {
+            Destroy(cars.First.Value.gameObject);
+            cars.RemoveFirst();
+            if(cars.Count < minCars)
+            {
+                GenerateCars(carsPerGeneration);
+            }
+        }
     }
 }
