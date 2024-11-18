@@ -13,5 +13,6 @@ public class Martini : MonoBehaviour
         GameManager.Instance.Martinis++;
         enabled = false;
         Destroy(root);
+        MusicManager.Instance.MartiniSound.Play();
     }
 }

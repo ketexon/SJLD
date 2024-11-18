@@ -25,16 +25,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2342857824613855721}
-  m_LocalRotation: {x: -0, y: -0, z: 0.080346376, w: 0.99676704}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3795699864102129862}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 9.217}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.61, y: 1.03}
+  m_AnchoredPosition: {x: -1.81, y: 0.71}
   m_SizeDelta: {x: 3, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &8644737437110957760
@@ -102,11 +102,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Click to jump
+  m_text: 'Click to jump.
 
-    Collect martinis
+    Collect martinis.
 
-    Solve dilemmas'
+    Solve dilemmas.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 04f2d7b243f38e0438ccf0e41f502809, type: 2}
   m_sharedMaterial: {fileID: -1118421076829984739, guid: 04f2d7b243f38e0438ccf0e41f502809, type: 2}
@@ -205,7 +205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5891803670719369499}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.026117023, w: 0.9996589}
   m_LocalPosition: {x: -0.92, y: 2.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

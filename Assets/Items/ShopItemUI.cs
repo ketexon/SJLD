@@ -52,5 +52,6 @@ public class ShopItemUI : MonoBehaviour
         GameManager.Instance.Martinis -= itemUI.Item.Price;
         Destroy(gameObject);
         ToolTip.Instance.Hide();
+        MusicManager.Instance.ItemBuySound.Play();
     }
 }

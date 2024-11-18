@@ -155,6 +155,7 @@ public class PlayerController : SingletonMonoBehaviour<PlayerController>
         {
             Health -= 1;
             ScreenshakeManager.Instance.TemporaryScreenShake(10, 5, 0.1f);
+            MusicManager.Instance.OnHurt();
         }
     }
 }

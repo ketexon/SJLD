@@ -20,6 +20,8 @@ public class DilemmaCar : Car
     [SerializeField] GameObject squirmerPrefab;
 
     [SerializeField] AudioSource levelSFXSource;
+    [SerializeField] AudioSource leftHelpSFXSource;
+    [SerializeField] AudioSource rightHelpSFXSource;
 
     List<Animator> leftSquirmerAnimators = new();
     List<Animator> rightSquirmerAnimators = new();
@@ -76,8 +78,46 @@ public class DilemmaCar : Car
         rightItemButton.enabled = selectingLeftItem;
 
         UpdateSquirmerAnimators();
+        UpdateSquirmerAudio();
 
         levelSFXSource.Play();
+
+        if (selectingLeftItem)
+        {
+            leftHelpSFXSource.Play();
+        }
+        else
+        {
+            rightHelpSFXSource.Play();
+        }
+    }
+
+    public void UpdateSquirmerAudio()
+    {
+        StopSquirmerAudio();
+        var selected = selectingLeftItem ? leftSquirmerAnimators : rightSquirmerAnimators;
+        foreach (var animator in selected)
+        {
+            animator.GetComponent<Squirmer>().StartAudio();
+        }
+    }
+
+    public void StopSquirmerAudio()
+    {
+        foreach (var animator in leftSquirmerAnimators)
+        {
+            if (animator)
+            {
+                animator.GetComponent<Squirmer>().StopAudio();
+            }
+        }
+        foreach (var animator in rightSquirmerAnimators)
+        {
+            if (animator)
+            {
+                animator.GetComponent<Squirmer>().StopAudio();
+            }
+        }
     }
 
     public override void OnEnable()
@@ -110,6 +150,7 @@ public class DilemmaCar : Car
             var squirmerGO = Instantiate(squirmerPrefab, spawn);
             (squirmerGO.transform as RectTransform).anchoredPosition = Vector2.zero;
             leftSquirmerAnimators.Add(squirmerGO.GetComponent<Animator>());
+            squirmerGO.GetComponent<Squirmer>().Left = true;
         }
         for (int i = 0; i < right; ++i)
         {
@@ -117,6 +158,7 @@ public class DilemmaCar : Car
             var squirmerGO = Instantiate(squirmerPrefab, spawn);
             (squirmerGO.transform as RectTransform).anchoredPosition = Vector2.zero;
             rightSquirmerAnimators.Add(squirmerGO.GetComponent<Animator>());
+            squirmerGO.GetComponent<Squirmer>().Left = false;
         }
 
         UpdateSquirmerAnimators();
@@ -142,6 +184,7 @@ public class DilemmaCar : Car
             PlayerPoint.Instance.PointEvent.RemoveListener(OnPoint);
             PlayerPoint.Instance.ClickEvent.RemoveListener(OnClick);
         }
+        StopSquirmerAudio();
     }
 
     void OnGoButtonPressed()

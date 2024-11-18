@@ -12,6 +12,7 @@ public class GoArrow : MonoBehaviour
 
     public void OnButtonClick()
     {
+        MusicManager.Instance.GoSound.Play();
         button.interactable = false;
         PlayerMovement.Instance.Moving = true;
     }
