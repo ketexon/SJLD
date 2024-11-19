@@ -28,6 +28,8 @@ public class ShopCar : Car
         itemUIs[2].enabled = true;
 
         dynamicObjectsParent.SetParent(null);
+
+        MusicManager.Instance.PlayingFast = false;
     }
 
     public override void OnDisable()

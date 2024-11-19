@@ -348,6 +348,8 @@ MonoBehaviour:
       m_Calls: []
   animator: {fileID: 2629393779410747448}
   deathCamera: {fileID: 6353160313182439262}
+  cinemachineBrain: {fileID: 0}
+  CameraOrthographicSize: 2.5
 --- !u!114 &7440918569985970965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,7 +364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 7392295143361776090}
   acceleration: 8
-  maxSpeed: 2
+  maxSpeed: 3
   animator: {fileID: 2629393779410747448}
 --- !u!114 &5280669155600715985
 MonoBehaviour:

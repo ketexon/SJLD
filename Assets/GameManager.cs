@@ -1,6 +1,7 @@
 using Kutie;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.SceneManagement;
 
 public class GameManager : SingletonMonoBehaviour<GameManager>
@@ -49,6 +50,12 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     [System.NonSerialized] public int AxolotlsDeltaSaved = 0;
     [System.NonSerialized] public int BadDecisions = 0;
     [System.NonSerialized] public int GoodDecisions = 0;
+    [System.NonSerialized] public bool CamusEnding = false;
+
+    override protected void Awake()
+    {
+        base.Awake();
+    }
 
     public void RestartGame()
     {

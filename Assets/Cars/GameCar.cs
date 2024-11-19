@@ -15,6 +15,8 @@ public class GameCar : Car
         PlayerController.Instance.enabled = true;
 
         PlayerController.Instance.DeathEvent.AddListener(OnPlayerDeath);
+
+        MusicManager.Instance.PlayingFast = true;
     }
 
     public override void OnDisable()

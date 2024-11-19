@@ -18,14 +18,19 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
 
     public void SetHearts(int nHearts)
     {
-        int delta = nHearts - CurHearts;
-        for(; delta < 0; delta++)
+        if(nHearts > CurHearts)
         {
-            Destroy(heartsContainer.GetChild(CurHearts - 1).gameObject);
+            for(int i = CurHearts; i < nHearts; ++i)
+            {
+                Instantiate(heartPrefab, heartsContainer);
+            }
         }
-        for (; delta > 0; delta--)
+        else if(nHearts < CurHearts) { }
         {
-            Instantiate(heartPrefab, heartsContainer);
+            for(int i = CurHearts - 1; i >= nHearts; --i)
+            {
+                Destroy(heartsContainer.GetChild(i).gameObject);
+            }
         }
     }
 

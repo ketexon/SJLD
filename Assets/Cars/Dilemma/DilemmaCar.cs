@@ -137,6 +137,8 @@ public class DilemmaCar : Car
         rightItemUI.Item = rightDebuff;
 
         SpawnSquirmers();
+
+        MusicManager.Instance.PlayingFast = false;
     }
 
     void SpawnSquirmers()

@@ -6,8 +6,11 @@ using System.Collections;
 public class MusicManager : SingletonMonoBehaviour<MusicManager>
 {
     [SerializeField] AudioMixer audioMixer;
-    [SerializeField] AudioSource bgm;
+    [SerializeField] AudioSource bgmSlow;
+    [SerializeField] AudioSource bgmFast;
+    [SerializeField] float bgmLerpMult = 1.0f;
     [SerializeField] AudioSource deathMusic;
+    [SerializeField] AudioMixerSnapshot defaultSnapshot;
 
     [SerializeField] float minLowpass;
     [SerializeField] float maxLowpass;
@@ -18,30 +21,66 @@ public class MusicManager : SingletonMonoBehaviour<MusicManager>
     [SerializeField] public AudioSource GoSound;
     [SerializeField] public AudioSource HurtSound;
     [SerializeField] public AudioSource MartiniSound;
-    [SerializeField] public AudioSource MissileWarningSound;
+
+    float bgmFastVolume;
+    float bgmSlowVolume;
+    [System.NonSerialized] public bool PlayingFast = true;
 
     void Start()
     {
         DontDestroyOnLoad(gameObject);
-        bgm.Play();
+
+        bgmFastVolume = bgmFast.volume;
+        bgmSlowVolume = bgmSlow.volume;
+
+        bgmFast.Play();
+        bgmSlow.Play();
+        bgmSlow.volume = 0.0f;
+
         deathMusic.Stop();
 
         GameManager.Instance.RestartEvent.AddListener(OnRestart);
+        GameManager.NewInstanceEvent.AddListener(OnNewGameManagerInstance);
+    }
+
+    void Update()
+    {
+        bgmFast.volume = Mathf.Lerp(
+            bgmFast.volume,
+            PlayingFast ? bgmFastVolume : 0.0f,
+            Time.deltaTime * bgmLerpMult
+        );
+
+        bgmSlow.volume = Mathf.Lerp(
+            bgmSlow.volume,
+            !PlayingFast ? bgmSlowVolume : 0.0f,
+            Time.deltaTime * bgmLerpMult
+        );
+    }
+
+    void OnNewGameManagerInstance(GameManager gm)
+    {
+        gm.RestartEvent.AddListener(OnRestart);
     }
 
     void OnRestart()
     {
-        GameManager.Instance.RestartEvent.AddListener(OnRestart);
         if (deathMusic.isPlaying)
         {
-            bgm.Play();
+            bgmFast.Play();
+            bgmFast.volume = bgmFastVolume;
+            bgmSlow.Play();
+            bgmSlow.volume = 0;
+
             deathMusic.Stop();
         }
+        defaultSnapshot.TransitionTo(0);
     }
 
     public void OnDeath()
     {
-        bgm.Stop();
+        bgmSlow.Stop();
+        bgmFast.Stop();
         deathMusic.Play();
     }
 

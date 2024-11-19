@@ -626,6 +626,135 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1526909142570915116, guid: 0baf6ba9daff4a9458ef548be71c7df4, type: 3}
   m_PrefabInstance: {fileID: 217048769}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &246059616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 246059617}
+  - component: {fileID: 246059618}
+  m_Layer: 0
+  m_Name: BkgMusicFast
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &246059617
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246059616}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1694190812}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &246059618
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246059616}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -9032178105238141569, guid: f73610923d5444244be479fdf911f569, type: 2}
+  m_audioClip: {fileID: 8300000, guid: c91ac89754c37fa4d964d597f7bb8e03, type: 3}
+  m_Resource: {fileID: 8300000, guid: c91ac89754c37fa4d964d597f7bb8e03, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &282188112
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1288,7 +1417,7 @@ GameObject:
   - component: {fileID: 445853610}
   - component: {fileID: 445853609}
   m_Layer: 0
-  m_Name: BkgMusic
+  m_Name: BkgMusicSlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1304,8 +1433,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -9032178105238141569, guid: f73610923d5444244be479fdf911f569, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 5c43a6613d7ea98499d2b87b955d93e5, type: 3}
-  m_Resource: {fileID: 8300000, guid: 5c43a6613d7ea98499d2b87b955d93e5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a36dd6d6e9172f8468107c6f00f40b75, type: 3}
+  m_Resource: {fileID: 8300000, guid: a36dd6d6e9172f8468107c6f00f40b75, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -1668,17 +1797,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3795699864102129862, guid: b3dea527a45c8504fb9f84d5f0960f81, type: 3}
   m_PrefabInstance: {fileID: 146714207}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &555824300 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8781281564137946026, guid: b3dea527a45c8504fb9f84d5f0960f81, type: 3}
-  m_PrefabInstance: {fileID: 146714207}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36847e36a62907347879483f60504bc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &560905575
 GameObject:
   m_ObjectHideFlags: 0
@@ -1763,7 +1881,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53.8
+  m_fontSize: 72.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1835,11 +1953,14 @@ PrefabInstance:
 
         <line-height=100%><size=90%>Programming
 
-        Design'
+        Design
+
+        Meow
+        SFX'
       objectReference: {fileID: 0}
     - target: {fileID: 2413990822867008567, guid: ffb1fcbd8d21fd346bb9b8b075782ea9, type: 3}
       propertyPath: m_fontSize
-      value: 25.85
+      value: 12.75
       objectReference: {fileID: 0}
     - target: {fileID: 2483346012848285868, guid: ffb1fcbd8d21fd346bb9b8b075782ea9, type: 3}
       propertyPath: m_Sprite
@@ -2264,11 +2385,18 @@ PrefabInstance:
 
         <line-height=125%>(ogux)
 
-        <line-height=100%><size=90%>Music'
+        <line-height=100%><size=90%>Music
+
+        Meow
+        SFX'
       objectReference: {fileID: 0}
     - target: {fileID: 2413990822867008567, guid: ffb1fcbd8d21fd346bb9b8b075782ea9, type: 3}
       propertyPath: m_fontSize
-      value: 49.7
+      value: 18.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413990822867008567, guid: ffb1fcbd8d21fd346bb9b8b075782ea9, type: 3}
+      propertyPath: m_TextWrappingMode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2483346012848285868, guid: ffb1fcbd8d21fd346bb9b8b075782ea9, type: 3}
       propertyPath: m_Sprite
@@ -3755,6 +3883,19 @@ MonoBehaviour:
     stupid dilemmas.
   noDilemmasMessages: Well, none of the choices were actually dilemmas. I guess we'll
     never know how morally good you are.
+  camusEndingText: There is but one truly serious philosophical problem and that
+    is suicide. That problem has just been answered... with a trolley.
+--- !u!114 &1563705364 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4024445117993908315, guid: b3dea527a45c8504fb9f84d5f0960f81, type: 3}
+  m_PrefabInstance: {fileID: 146714207}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab338ede635bfe40bcfaf9b7228420b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1570665910
 GameObject:
   m_ObjectHideFlags: 0
@@ -3931,7 +4072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c5d78a5a90d93f42b20f3a363ba6835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCar: {fileID: 555824300}
+  startCar: {fileID: 1563705364}
   dilemmaCarPrefab: {fileID: 2689748498649057825, guid: 2d4a0291e370e444da01ded613884c89, type: 3}
   gameCarPrefab: {fileID: 7948015054543031652, guid: 867b20caa80960046be5c89c01dd37b9, type: 3}
   shopCarPrefab: {fileID: 7948015054543031652, guid: 34b0351ce1c1f5643b00bbaf6f780d2a, type: 3}
@@ -4022,7 +4163,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 13.95
+  m_fontSize: 18.85
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4234,6 +4375,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 445853610}
+  - {fileID: 246059617}
   - {fileID: 1638936418}
   - {fileID: 1936233944}
   - {fileID: 309811417}
@@ -4255,8 +4397,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: f73610923d5444244be479fdf911f569, type: 2}
-  bgm: {fileID: 445853609}
+  bgmSlow: {fileID: 445853609}
+  bgmFast: {fileID: 246059618}
+  bgmLerpMult: 1
   deathMusic: {fileID: 1638936419}
+  defaultSnapshot: {fileID: 24500006, guid: f73610923d5444244be479fdf911f569, type: 2}
   minLowpass: 100
   maxLowpass: 22000
   hurtLowpassDuration: 1
@@ -4297,7 +4442,6 @@ MonoBehaviour:
   GoSound: {fileID: 309811418}
   HurtSound: {fileID: 1712110527}
   MartiniSound: {fileID: 1570665911}
-  MissileWarningSound: {fileID: 0}
 --- !u!1 &1712110525
 GameObject:
   m_ObjectHideFlags: 0
@@ -5017,7 +5161,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.9
+  m_fontSize: 36.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5416,7 +5560,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.9
+  m_fontSize: 36.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5981,11 +6125,12 @@ PrefabInstance:
 
         Design
 
-'
+        Meow
+        SFX'
       objectReference: {fileID: 0}
     - target: {fileID: 2413990822867008567, guid: ffb1fcbd8d21fd346bb9b8b075782ea9, type: 3}
       propertyPath: m_fontSize
-      value: 34.45
+      value: 16.95
       objectReference: {fileID: 0}
     - target: {fileID: 4441479188070158290, guid: ffb1fcbd8d21fd346bb9b8b075782ea9, type: 3}
       propertyPath: m_Pivot.x

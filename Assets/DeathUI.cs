@@ -17,61 +17,69 @@ public class DeathUI : SingletonMonoBehaviour<DeathUI>
     [SerializeField] List<string> messages;
     [SerializeField] string noAxolotlsMessage;
     [SerializeField] string noDilemmasMessages;
+    [SerializeField] string camusEndingText = "There is but one truly serious philosophical problem and that is suicide. And that problem has just been answered... with a trolley.";
 
     public void Show()
     {
         canvas.enabled = true;
         animator.SetTrigger("Show");
 
-        var score = GameManager.Instance.Score;
-        var axolotlsKilled = GameManager.Instance.AxolotlsKilled;
-        var axolotlsTotal = axolotlsKilled + GameManager.Instance.AxolotlsSaved;
-        var axolotlsPreventablyKilled = GameManager.Instance.AxolotlsDeltaKilled;
-        string message;
-        if(axolotlsTotal > 0)
+        if (GameManager.Instance.CamusEnding)
         {
-            var badDecisions = GameManager.Instance.BadDecisions;
-            var totalDecisions = badDecisions + GameManager.Instance.GoodDecisions;
-            if(totalDecisions > 0)
-            {
-                var percent = (float)(badDecisions) / totalDecisions;
-                string fate = "";
-                for (int i = 0; i < thresholds.Count; ++i)
-                {
-                    if (percent <= thresholds[i])
-                    {
-                        fate = messages[i];
-                        break;
-                    }
-                }
-                message = string.Format(
-                    percentKilledTemplate,
-                    (int)(percent * 100),
-                    fate,
-                    percent < 0.45f
-                        ? "#4464D1"
-                        : percent > 0.55f
-                        ? "#B73147"
-                        : "white"
-                );
-            }
-            else
-            {
-                message = noDilemmasMessages;
-            }
+            scoreText.text = camusEndingText;
         }
         else
         {
-            message = noAxolotlsMessage;
+            var score = GameManager.Instance.Score;
+            var axolotlsKilled = GameManager.Instance.AxolotlsKilled;
+            var axolotlsTotal = axolotlsKilled + GameManager.Instance.AxolotlsSaved;
+            var axolotlsPreventablyKilled = GameManager.Instance.AxolotlsDeltaKilled;
+            string message;
+            if (axolotlsTotal > 0)
+            {
+                var badDecisions = GameManager.Instance.BadDecisions;
+                var totalDecisions = badDecisions + GameManager.Instance.GoodDecisions;
+                if (totalDecisions > 0)
+                {
+                    var percent = (float)(badDecisions) / totalDecisions;
+                    string fate = "";
+                    for (int i = 0; i < thresholds.Count; ++i)
+                    {
+                        if (percent <= thresholds[i])
+                        {
+                            fate = messages[i];
+                            break;
+                        }
+                    }
+                    message = string.Format(
+                        percentKilledTemplate,
+                        (int)(percent * 100),
+                        fate,
+                        percent < 0.45f
+                            ? "#4464D1"
+                            : percent > 0.55f
+                            ? "#B73147"
+                            : "white"
+                    );
+                }
+                else
+                {
+                    message = noDilemmasMessages;
+                }
+            }
+            else
+            {
+                message = noAxolotlsMessage;
+            }
+
+            scoreText.text = string.Format(
+                scoreTemplateString,
+                score, score == 1 ? "" : "s",
+                axolotlsKilled, axolotlsKilled == 1 ? "" : "s",
+                axolotlsTotal, axolotlsPreventablyKilled,
+                message
+            );
         }
-        
-        scoreText.text = string.Format(
-            scoreTemplateString,
-            score, score == 1 ? "" : "s",
-            axolotlsKilled, axolotlsKilled == 1 ? "" : "s",
-            axolotlsTotal, axolotlsPreventablyKilled,
-            message
-        );
     }
 
     public void OnRestartPressed()
