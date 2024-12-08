@@ -19,7 +19,7 @@ public class StartCarEditor : Editor
 
         root.Add(defaultInspector);
 
-        Label timesPlayedLabel = new Label($"Times Played: {PlayerPrefs.GetInt("TimesPlayed")}");
+        Label timesPlayedLabel = new($"Times Played: {PlayerPrefs.GetInt("TimesPlayed")}");
         Button resetTimesPlayedButton = new(() =>
         {
             PlayerPrefs.SetInt("TimesPlayed", 0);

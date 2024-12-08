@@ -1,8 +1,8 @@
-using Kutie;
 using UnityEngine;
 using UnityEngine.UI;
+using Kutie.Extensions;
 
-public class ToolTip : SingletonMonoBehaviour<ToolTip>
+public class ToolTip : Kutie.Singleton.SingletonMonoBehaviour<ToolTip>
 {
     [SerializeField] Image bkg;
     [SerializeField] TMPro.TMP_Text text;

@@ -1,10 +1,9 @@
-using Kutie;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.SceneManagement;
 
-public class GameManager : SingletonMonoBehaviour<GameManager>
+public class GameManager : Kutie.Singleton.SingletonMonoBehaviour<GameManager>
 {
     [SerializeField] string scoreTemplateText = "<color=#4464D1>{0}</color> dilemma{1} solved";
 

@@ -1,7 +1,7 @@
 using Kutie;
 using UnityEngine;
 
-public class PlayerMovement : SingletonMonoBehaviour<PlayerMovement>
+public class PlayerMovement : Kutie.Singleton.SingletonMonoBehaviour<PlayerMovement>
 {
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float acceleration = 8.0f;

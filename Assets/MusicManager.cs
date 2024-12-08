@@ -1,9 +1,8 @@
 using UnityEngine;
-using Kutie;
 using UnityEngine.Audio;
 using System.Collections;
 
-public class MusicManager : SingletonMonoBehaviour<MusicManager>
+public class MusicManager : Kutie.Singleton.SingletonMonoBehaviour<MusicManager>
 {
     [SerializeField] AudioMixer audioMixer;
     [SerializeField] AudioSource bgmSlow;
@@ -40,7 +39,7 @@ public class MusicManager : SingletonMonoBehaviour<MusicManager>
         deathMusic.Stop();
 
         GameManager.Instance.RestartEvent.AddListener(OnRestart);
-        GameManager.NewInstanceEvent.AddListener(OnNewGameManagerInstance);
+        GameManager.NewInstanceEvent += OnNewGameManagerInstance;
     }
 
     void Update()

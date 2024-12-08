@@ -3,7 +3,7 @@ using Kutie;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 
-public class PauseMenu : SingletonMonoBehaviour<PauseMenu>
+public class PauseMenu : Kutie.Singleton.SingletonMonoBehaviour<PauseMenu>
 {
     [SerializeField] Canvas canvas;
     [SerializeField] Slider musicVolumeSlider;

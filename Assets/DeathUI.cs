@@ -1,9 +1,8 @@
 using UnityEngine;
-using Kutie;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
-public class DeathUI : SingletonMonoBehaviour<DeathUI>
+public class DeathUI : Kutie.Singleton.SingletonMonoBehaviour<DeathUI>
 {
     [SerializeField] Canvas canvas;
     [SerializeField] Animator animator;

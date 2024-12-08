@@ -1,8 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
-using Kutie;
 
-public class ItemManager : SingletonMonoBehaviour<ItemManager>
+public class ItemManager : Kutie.Singleton.SingletonMonoBehaviour<ItemManager>
 {
     [SerializeField] List<ItemSO> Items;
 

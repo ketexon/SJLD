@@ -1,8 +1,8 @@
-using Kutie;
+using Kutie.Extensions;
 using Unity.Cinemachine;
 using UnityEngine;
 
-public class ScreenshakeManager : SingletonMonoBehaviour<ScreenshakeManager>
+public class ScreenshakeManager : Kutie.Singleton.SingletonMonoBehaviour<ScreenshakeManager>
 {
     const float LERP_MULT = 10.0f;
 

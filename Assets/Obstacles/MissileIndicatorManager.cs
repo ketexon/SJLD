@@ -1,7 +1,6 @@
-using Kutie;
 using UnityEngine;
 
-public class MissileIndicatorManager : SingletonMonoBehaviour<MissileIndicatorManager>
+public class MissileIndicatorManager : Kutie.Singleton.SingletonMonoBehaviour<MissileIndicatorManager>
 {
     [SerializeField] GameObject missileIndicatorPrefab;
 

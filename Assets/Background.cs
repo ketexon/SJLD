@@ -1,8 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
-using Kutie;
 
-public class Background : SingletonMonoBehaviour<Background>
+public class Background : Kutie.Singleton.SingletonMonoBehaviour<Background>
 {
     [SerializeField] Transform target;
     [SerializeField] List<Transform> layers;

@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-using Kutie;
+using Kutie.Extensions;
 
 public class MissileObstacleCollider : ObstacleCollider
 {

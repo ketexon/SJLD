@@ -1,4 +1,4 @@
-using Kutie;
+using Kutie.Extensions;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;

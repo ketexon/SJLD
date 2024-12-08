@@ -1,9 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
-using Kutie;
 
-public class ObstacleSpawner : SingletonMonoBehaviour<ObstacleSpawner>
+public class ObstacleSpawner : Kutie.Singleton.SingletonMonoBehaviour<ObstacleSpawner>
 {
     [SerializeField] List<GameObject> prefabs;
     [SerializeField] float minObstacleInterval = 3.0f;

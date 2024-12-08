@@ -1,8 +1,8 @@
-using Kutie;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using Kutie.Extensions;
 
 public class DilemmaCar : Car
 {
@@ -128,7 +128,7 @@ public class DilemmaCar : Car
         PlayerMovement.Instance.Moving = true;
 
         goButton.onClick.AddListener(OnGoButtonPressed);
-        
+
         PlayerPoint.Instance.PointEvent.AddListener(OnPoint);
         PlayerPoint.Instance.ClickEvent.AddListener(OnClick);
 
@@ -202,7 +202,7 @@ public class DilemmaCar : Car
         ItemManager.Instance.AddItem(selectedItem);
 
         GameManager.Instance.Score++;
-        
+
         var selectedSquirmers = selectingLeftItem ? leftSquirmerAnimators : rightSquirmerAnimators;
         var nonSelectedSquirmers = !selectingLeftItem ? leftSquirmerAnimators : rightSquirmerAnimators;
         GameManager.Instance.AxolotlsKilled += selectedSquirmers.Count;

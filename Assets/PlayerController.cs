@@ -1,10 +1,10 @@
-using Kutie;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using Kutie.Extensions;
 
-public class PlayerController : SingletonMonoBehaviour<PlayerController>
+public class PlayerController : Kutie.Singleton.SingletonMonoBehaviour<PlayerController>
 {
     [SerializeField] Transform foot;
     [SerializeField] LayerMask floorLayerMask;

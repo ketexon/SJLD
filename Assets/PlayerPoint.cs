@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
-public class PlayerPoint : SingletonMonoBehaviour<PlayerPoint>
+public class PlayerPoint : Kutie.Singleton.SingletonMonoBehaviour<PlayerPoint>
 {
     public UnityEvent<Vector2> PointEvent;
     public UnityEvent ClickEvent;

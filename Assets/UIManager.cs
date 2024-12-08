@@ -1,7 +1,7 @@
 using Kutie;
 using UnityEngine;
 
-public class UIManager : SingletonMonoBehaviour<UIManager>
+public class UIManager : Kutie.Singleton.SingletonMonoBehaviour<UIManager>
 {
     [SerializeField] Transform heartsContainer;
     [SerializeField] GameObject heartPrefab;

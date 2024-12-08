@@ -1,8 +1,8 @@
-using Kutie;
+using Kutie.Extensions;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Train : SingletonMonoBehaviour<Train>
+public class Train : Kutie.Singleton.SingletonMonoBehaviour<Train>
 {
     [SerializeField] Car startCar;
     [SerializeField] GameObject dilemmaCarPrefab;
